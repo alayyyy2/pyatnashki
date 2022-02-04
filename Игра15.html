@@ -1,0 +1,315 @@
+<html>
+
+<body>
+<table id="table1" border = "1" cellspacing="0" width="25%" height="15">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+
+<script type="text/javascript">
+table = document.getElementById('table1');
+function shuffle(array) {
+let currentIndex = array.length, randomIndex;
+
+while (currentIndex != 0) {
+
+randomIndex = Math.floor(Math.random() * currentIndex);
+currentIndex--;
+
+[array[currentIndex], array[randomIndex]] = [
+array[randomIndex], array[currentIndex]];
+}
+
+return array;
+}
+
+var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+shuffle(arr);
+k=0;
+s=1;
+for (i=0; i<4; i++)
+{
+for (j=0; j<4; j++)
+{
+if ((i!=4) && (j != 4))
+{
+table1.rows[j].cells[i].innerHTML ='<align=center onclick="click1('+ s +')">' + arr[k];
+k=k+1;
+s=s+1;
+}
+}
+}
+table1.rows[3].cells[3].innerHTML = '<align=center onclick="click1(16)">';
+function click1(n)
+{
+  table=document.getElementById('table1')
+	if (n==1) {
+		if (table.rows[1].cells[0].textContent == "") {
+    			table.rows[1].cells[0].innerHTML= '<align=center onclick="click1(2)">' + table.rows[0].cells[0].textContent;
+			table.rows[0].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[0].cells[1].textContent == "") {
+    			table.rows[0].cells[1].innerHTML= '<align=center onclick="click1(5)">' + table.rows[0].cells[0].textContent;
+			table.rows[0].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		
+	}
+
+	if (n==2) {
+		if (table.rows[0].cells[0].textContent == "") {
+    			table.rows[0].cells[0].innerHTML= '<align=center onclick="click1(1)">' + table.rows[1].cells[0].textContent;
+			table.rows[1].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[1].textContent == "") {
+    			table.rows[1].cells[1].innerHTML= '<align=center onclick="click1(6)">' + table.rows[1].cells[0].textContent;
+			table.rows[1].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[0].textContent == "") {
+    			table.rows[2].cells[0].innerHTML= '<align=center onclick="click1(3)">' + table.rows[1].cells[0].textContent;
+			table.rows[1].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+	
+	if (n==3) {
+		if (table.rows[1].cells[0].textContent == "") {
+    			table.rows[1].cells[0].innerHTML= '<align=center onclick="click1(2)">' + table.rows[2].cells[0].textContent;
+			table.rows[2].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[1].textContent == "") {
+    			table.rows[2].cells[1].innerHTML= '<align=center onclick="click1(7)">' + table.rows[2].cells[0].textContent;
+			table.rows[2].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[0].textContent == "") {
+    			table.rows[3].cells[0].innerHTML= '<align=center onclick="click1(4)">' + table.rows[2].cells[0].textContent;
+			table.rows[2].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+
+	if (n==4) {
+		if (table.rows[2].cells[0].textContent == "") {
+    			table.rows[2].cells[0].innerHTML= '<align=center onclick="click1(3)">' + table.rows[3].cells[0].textContent;
+			table.rows[3].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[1].textContent == "") {
+    			table.rows[3].cells[1].innerHTML= '<align=center onclick="click1(8)">' + table.rows[3].cells[0].textContent;
+			table.rows[3].cells[0].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+
+	if (n==5) {
+		if (table.rows[0].cells[0].textContent == "") {
+    			table.rows[0].cells[0].innerHTML= '<align=center onclick="click1(1)">' + table.rows[0].cells[1].textContent;
+			table.rows[0].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[1].textContent == "") {
+    			table.rows[1].cells[1].innerHTML= '<align=center onclick="click1(6)">' + table.rows[0].cells[1].textContent;
+			table.rows[0].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[0].cells[2].textContent == "") {
+    			table.rows[0].cells[2].innerHTML= '<align=center onclick="click1(9)">' + table.rows[0].cells[1].textContent;
+			table.rows[0].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+
+	if (n==6) {
+		if (table.rows[0].cells[1].textContent == "") {
+    			table.rows[0].cells[1].innerHTML= '<align=center onclick="click1(5)">' + table.rows[1].cells[1].textContent;
+			table.rows[1].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[0].textContent == "") {
+    			table.rows[1].cells[0].innerHTML= '<align=center onclick="click1(2)">' + table.rows[1].cells[1].textContent;
+			table.rows[1].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[1].textContent == "") {
+    			table.rows[2].cells[1].innerHTML= '<align=center onclick="click1(7)">' + table.rows[1].cells[1].textContent;
+			table.rows[1].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+		if (table.rows[1].cells[2].textContent == "") {
+    			table.rows[1].cells[2].innerHTML= '<align=center onclick="click1(10)">' + table.rows[1].cells[1].textContent;
+			table.rows[1].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+	}
+
+	if (n==7) {
+		if (table.rows[1].cells[1].textContent == "") {
+    			table.rows[1].cells[1].innerHTML= '<align=center onclick="click1(6)">' + table.rows[2].cells[1].textContent;
+			table.rows[2].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[0].textContent == "") {
+    			table.rows[2].cells[0].innerHTML= '<align=center onclick="click1(3)">' + table.rows[2].cells[1].textContent;
+			table.rows[2].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[1].textContent == "") {
+    			table.rows[3].cells[1].innerHTML= '<align=center onclick="click1(8)">' + table.rows[2].cells[1].textContent;
+			table.rows[2].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+		if (table.rows[2].cells[2].textContent == "") {
+    			table.rows[2].cells[2].innerHTML= '<align=center onclick="click1(11)">' + table.rows[2].cells[1].textContent;
+			table.rows[2].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+	}
+
+	if (n==8) {
+		if (table.rows[3].cells[0].textContent == "") {
+    			table.rows[3].cells[0].innerHTML= '<align=center onclick="click1(4)">' + table.rows[3].cells[1].textContent;
+			table.rows[3].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[1].textContent == "") {
+    			table.rows[2].cells[1].innerHTML= '<align=center onclick="click1(7)">' + table.rows[3].cells[1].textContent;
+			table.rows[3].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[2].textContent == "") {
+    			table.rows[3].cells[2].innerHTML= '<align=center onclick="click1(12)">' + table.rows[3].cells[1].textContent;
+			table.rows[3].cells[1].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+
+	if (n==9) {
+		if (table.rows[0].cells[1].textContent == "") {
+    			table.rows[0].cells[1].innerHTML= '<align=center onclick="click1(5)">' + table.rows[0].cells[2].textContent;
+			table.rows[0].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[2].textContent == "") {
+    			table.rows[1].cells[2].innerHTML= '<align=center onclick="click1(10)">' + table.rows[0].cells[2].textContent;
+			table.rows[0].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[0].cells[3].textContent == "") {
+    			table.rows[0].cells[3].innerHTML= '<align=center onclick="click1(13)">' + table.rows[0].cells[2].textContent;
+			table.rows[0].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}		
+	}
+
+	if (n==10) {
+		if (table.rows[0].cells[2].textContent == "") {
+    			table.rows[0].cells[2].innerHTML= '<align=center onclick="click1(9)">' + table.rows[1].cells[2].textContent;
+			table.rows[1].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[1].textContent == "") {
+    			table.rows[1].cells[1].innerHTML= '<align=center onclick="click1(6)">' + table.rows[1].cells[2].textContent;
+			table.rows[1].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[2].textContent == "") {
+    			table.rows[2].cells[2].innerHTML= '<align=center onclick="click1(11)">' + table.rows[1].cells[2].textContent;
+			table.rows[1].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+		if (table.rows[1].cells[3].textContent == "") {
+    			table.rows[1].cells[3].innerHTML= '<align=center onclick="click1(14)">' + table.rows[1].cells[2].textContent;
+			table.rows[1].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+	}
+
+	if (n==11) {
+		if (table.rows[1].cells[2].textContent == "") {
+    			table.rows[1].cells[2].innerHTML= '<align=center onclick="click1(10)">' + table.rows[2].cells[2].textContent;
+			table.rows[2].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[1].textContent == "") {
+    			table.rows[2].cells[1].innerHTML= '<align=center onclick="click1(7)">' + table.rows[2].cells[2].textContent;
+			table.rows[2].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[2].textContent == "") {
+    			table.rows[3].cells[2].innerHTML= '<align=center onclick="click1(12)">' + table.rows[2].cells[2].textContent;
+			table.rows[2].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+		if (table.rows[2].cells[3].textContent == "") {
+    			table.rows[2].cells[3].innerHTML= '<align=center onclick="click1(15)">' + table.rows[2].cells[2].textContent;
+			table.rows[2].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+	}
+
+	if (n==12) {
+		if (table.rows[3].cells[3].textContent == "") {
+    			table.rows[3].cells[3].innerHTML= '<align=center onclick="click1(16)">' + table.rows[3].cells[2].textContent;
+			table.rows[3].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[2].textContent == "") {
+    			table.rows[2].cells[2].innerHTML= '<align=center onclick="click1(11)">' + table.rows[3].cells[2].textContent;
+			table.rows[3].cells[2].innerHTML ='<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[1].textContent == "") {
+    			table.rows[3].cells[1].innerHTML= '<align=center onclick="click1(8)">' + table.rows[3].cells[2].textContent;
+			table.rows[3].cells[2].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		
+	}
+
+	if (n==13) {
+		if (table.rows[0].cells[2].textContent == "") {
+    			table.rows[0].cells[2].innerHTML= '<align=center onclick="click1(9)">' + table.rows[0].cells[3].textContent;
+			table.rows[0].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[3].textContent == "") {
+    			table.rows[1].cells[3].innerHTML= '<align=center onclick="click1(14)">' + table.rows[0].cells[3].textContent;
+			table.rows[0].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+	}
+
+	if (n==14) {
+		if (table.rows[0].cells[3].textContent == "") {
+    			table.rows[0].cells[3].innerHTML= '<align=center onclick="click1(13)">' + table.rows[1].cells[3].textContent;
+			table.rows[1].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[1].cells[2].textContent == "") {
+    			table.rows[1].cells[2].innerHTML= '<align=center onclick="click1(10)">' + table.rows[1].cells[3].textContent;
+			table.rows[1].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[3].textContent == "") {
+    			table.rows[2].cells[3].innerHTML= '<align=center onclick="click1(15)">' + table.rows[1].cells[3].textContent;
+			table.rows[1].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		
+	}
+
+	if (n==15) {
+		if (table.rows[1].cells[3].textContent == "") {
+    			table.rows[1].cells[3].innerHTML= '<align=center onclick="click1(14)">' + table.rows[2].cells[3].textContent;
+			table.rows[2].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[2].cells[2].textContent == "") {
+    			table.rows[2].cells[2].innerHTML= '<align=center onclick="click1(11)">' + table.rows[2].cells[3].textContent;
+			table.rows[2].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[3].textContent == "") {
+    			table.rows[3].cells[3].innerHTML= '<align=center onclick="click1(16)">' + table.rows[2].cells[3].textContent;
+			table.rows[2].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}
+		
+	}
+
+	if (n==16) {
+		if (table.rows[2].cells[3].textContent == "") {
+    			table.rows[2].cells[3].innerHTML= '<align=center onclick="click1(15)">' + table.rows[3].cells[3].textContent;
+			table.rows[3].cells[3].innerHTML ='<align=center onclick="click1('+ n +')">';
+		}
+		if (table.rows[3].cells[2].textContent == "") {
+    			table.rows[3].cells[2].innerHTML= '<align=center onclick="click1(12)">' + table.rows[3].cells[3].textContent;
+			table.rows[3].cells[3].innerHTML = '<align=center onclick="click1('+ n +')">';
+		}	
+	}
+}
+</script>
+
+</html>
